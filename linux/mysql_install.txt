@@ -1,0 +1,59 @@
+﻿wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
+yum localinstall mysql57-community-release-el7-8.noarch.rpm
+yum repolist enabled | grep "mysql.*-community.*
+#vim /etc/yum.repos.d/mysql-community.repo
+yum install mysql-community-server
+systemctl start mysqld
+
+systemctl enable mysqld
+systemctl daemon-reload
+
+grep 'temporary password' /var/log/mysqld.log
+
+SET PASSWORD = PASSWORD('cloud_Gc3');
+
+
+flush privileges
+
+
+
+
+
+
+
+
+
+
+
+[client]
+default-character-set=utf8
+
+[mysqld]
+#character-set-server=utf8
+character_set_server=utf8
+
+
+ALTER DATABASE  mysql  CHARACTER SET utf8 COLLATE utf8_general_ci;
+mysql
+
+update user set Password=PASSWORD('cloud_Gc3') where User='root';
+
+flush privileges
+
+CREATE USER 'cloudgc'@'localhost' IDENTIFIED BY 'cloud@Gc3'; 
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'cloudgc'@'%' IDENTIFIED BY 'cloud@Gc3' WITH GRANT OPTION;
+
+L 50638, now running 50720.
+
+
+mysql_upgrade mysql -h 192.168.30.254 -u xxxxuojie -p
+
+#mysql 字符集
+vi /etc/my.cnf
+
+
+# 系统字符集
+locale
+/etc/locale.conf
