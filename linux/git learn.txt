@@ -1,0 +1,26 @@
+mkdir learngit
+
+git init
+touch readme
+
+git add readme
+git commit -m "commit descript"
+
+vi readme
+git status
+
+git diff  HEAD -- readme
+
+git add readme
+
+git commit -m "other descript"
+
+git log
+
+git reset --hard HEAD^^^^^^^^^^^   HEAD~100
+
+git reset --hard idnum
+
+git reflog
+
+git checkout --file 如果不跟 --退回分支
