@@ -1,0 +1,11 @@
+#! /bin/sh
+curl https://bootstrap.pypa.io/get-pip.py | python
+pip install shadowsocks
+mkdir /etc/shadowsocks
+echo {\"server\": \"0.0.0.0\", \"port_password\": {\"443\": \"ysysljj\",\
+\"446\": \"ysysljj\",\
+\"447\": \"ysysljj\" }, \
+\"timeout\": 300, \"method\": \"aes-256-cfb\",\
+ \"workers\":2 \
+} > /etc/shadowsocks/config
+ssserver -c /etc/shadowsocks/config -d start 
