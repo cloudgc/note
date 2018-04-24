@@ -1,0 +1,55 @@
+Hostname
+/etc/hosts
+/etc/hostname
+/etc/sysconfig/network(HOSTNAME=MYHOST)
+Swap
+/etc/fstab
+Swapoff –a
+
+
+systemctl stop firewalld
+systemctl disable firewalld
+
+
+PATH
+/usr/local/bin
+
+
+
+
+MASTER_IP_ADDR=192.168.199.130
+echo "MASTER_IP_ADDR=192.168.199.130" >> /etc/profile
+source /etc/profile
+
+echo "MASTER_HOSTNAME=mg" >> /etc/profile
+echo "WORK_IP_ADDR=192.168.199.131" >> /etc/profile
+source /etc/profile
+
+#journalctl -xe
+
+:<<!
+etcdctl --endpoints=https://10.4.63.161:2379 \
+        --ca-file=/etc/kubernetes/ssl/ca.pem \
+        --cert-file=/etc/kubernetes/ssl/kubernetes.pem \
+        --key-file=/etc/kubernetes/ssl/kubernetes-key.pem \
+        member add nodename https://10.4.63.160:2380
+etcdctl --ca-file=/etc/kubernetes/ssl/ca.pem \
+        --cert-file=/etc/kubernetes/ssl/kubernetes.pem \
+        --key-file=/etc/kubernetes/ssl/kubernetes-key.pem \
+        member add wk https://192.168.199.131:2380
+!
+
+
+etcdctl --ca-file=/etc/kubernetes/ssl/ca.pem \
+        --cert-file=/etc/kubernetes/ssl/kubernetes.pem \
+        --key-file=/etc/kubernetes/ssl/kubernetes-key.pem \
+        cluster-health
+
+
+
+step
+    ssl.sh
+    deploy_etcd.sh
+
+
+
