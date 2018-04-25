@@ -1,0 +1,3 @@
+ApplicationContextAware 实现
+
+application.getBeanWithAnnotation(myHandler.class)
