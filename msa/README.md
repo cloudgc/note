@@ -4,10 +4,7 @@ choose principle
 * 2.有大公司落地参考
 * 3.社区活跃度
 
-![point](https://github.com/cloudgc/note/blob/master/msa/result.jpg)
 
-
-![point](https://github.com/cloudgc/note/blob/master/msa/list.jpg)
 
 # 服务框架
 ----
