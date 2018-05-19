@@ -9,12 +9,10 @@ choose principle
 # 服务框架
 ----
 
-dubbo 较弱的跨语言特性
-gRPC google 最新推出的基于protobuf  的RPC 协议 适合内部调用
-RESTful 适合对外暴露端口
-
-
-当选springcloud  接口使用RESTful 通过swagger 生成统一api
+* dubbo 较弱的跨语言特性
+* gRPC google 最新推出的基于protobuf  的RPC 协议 适合内部调用
+* RESTful 适合对外暴露端口
+* springcloud  接口使用RESTful 通过swagger 生成统一api
 
 # 服务支撑服务
 -----
