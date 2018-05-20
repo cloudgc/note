@@ -179,33 +179,55 @@ choose principle
 
 ![](https://github.com/cloudgc/note/blob/master/msa/safe.png)
 
-#服务部署
+# 服务部署
 ---
 
 #### 容器调度
 
-   *K8S(kubernetes)
+   *K8S(kubernetes) 学习门槛比较高
    
-   *Swarm,使用portainer管理界面
+   *Swarm,使用portainer管理界面 上手容易
    
-   *Mesos需要较高门槛
+   *Mesos需要较高门槛 自定义的调度算法 
     
-
-#### 发布系统
-
-   * jenkins 
 
 #### 镜像治理
     
-   * DockerReistry
+   * DockerReistry比较原生，只有api 
    
-   * VMharbor
+   * VM开源 harbor 比较完善的文档界面管理
    
 
 #### 资源治理
 
-#### IAM
+   * CMDB 原则
+    
+        * 应用app
+        
+        * 组织org
+        
+        * 容器配额
+        
+        
 
+#### 发布平台
+   
+   
+   * Netfix开源的spinnaker
+   
+   * jenkins
+   
+  
+![](https://github.com/cloudgc/note/blob/master/msa/line.jpg)
+   
+
+#### IAM (identity&access managerment)
+   
+   * Apereo CAS
+   
+   * JBoss开源的keycloak
+   
+  
 
 
     
