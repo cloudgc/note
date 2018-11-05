@@ -1,3 +1,13 @@
 ApplicationContextAware 实现
 
 application.getBeanWithAnnotation(myHandler.class)
+
+自定义 scan
+META-INF
+    EnableAutoConfig
+
+1. implements ImportBeanDefinitionRegistrar
+2. class extends ClassPathBeanDefinitionRegistrar
+3. implements BeanDefinitionRegistryPostProcessor
+
+spring 加载周期

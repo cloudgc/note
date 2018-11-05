@@ -23,4 +23,4 @@ git reset --hard idnum
 
 git reflog
 
-git checkout --file 如果不跟 --退回分支
+git checkout --file ??????? --?????

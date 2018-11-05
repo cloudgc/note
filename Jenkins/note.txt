@@ -1,0 +1,12 @@
+read doc from https://wiki.jenkins.io/display/JENKINS/Plugin+tutorial
+
+create pom.xml add package type is pom
+
+mvn archetype:generate -Dfilter=io.jenkins.archetypes:plugin -DinteractiveMode=false  -DgroupId=org.cloudfun.plugin.jenkins  -DartifactId=url-parameter
+
+mvn -U archetype:generate -Dfilter=io.jenkins.archetypes:  -DgroupId=org.cloudfun.plugin.jenkins -DartifactId=url-parameter -DarchetypeArtifactId=archetype-artifactId -DinteractiveMode=false
+
+mvn -U archetype:generate -Dfilter=io.jenkins.archetypes:
+
+
+
