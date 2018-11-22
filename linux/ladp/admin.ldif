@@ -1,0 +1,61 @@
+dn: dc=cloudfun,dc=org
+o: cloudfun org
+dc: cloudfun
+objectClass: top
+objectClass: dcObject
+objectclass: organization
+
+dn: cn=admin,dc=cloudfun,dc=org
+cn: admin
+objectClass: organizationalRole
+description: Directory Manager
+
+dn: ou=People,dc=cloudfun,dc=org
+ou: People
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Group,dc=cloudfun,dc=org
+ou: Group
+objectClass: top
+objectClass: organizationalUnit
+
+
+
+================
+
+dn: ou=People,dc=cloudfun,dc=org
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Groups,dc=cloudfun,dc=org
+objectClass: organizationalUnit
+ou: Groups
+
+dn: cn=admin,ou=Groups,dc=cloudfun,dc=org
+objectClass: posixGroup
+cn: miners
+gidNumber: 5000
+
+dn: uid=john,ou=People,dc=cloudfun,dc=org
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: john
+sn: Doe
+givenName: John
+cn: John Doe
+displayName: John Doe
+uidNumber: 10000
+gidNumber: 5000
+userPassword: johnldap
+gecos: John Doe
+loginShell: /bin/bash
+homeDirectory: /home/john
+
+
+
+===============db
+dn: olcDatabase={2}hdb,cn=config
+add: olcDbIndex
+olcDbIndex: mail eq,sub

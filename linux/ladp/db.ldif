@@ -1,0 +1,21 @@
+ldapmodify -Y EXTERNAL -H ldapi：/// -f db.ldif
+
+# AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+# CRC32 a70b3bf5
+dn: olcDatabase={2}hdb
+objectClass: olcDatabaseConfig
+objectClass: olcHdbConfig
+olcDatabase: {2}hdb
+olcDbDirectory: /var/lib/ldap
+olcSuffix: dc=cloudfun,dc=org
+olcRootDN: cn=admin,dc=cloudfun,dc=org
+olcDbIndex: objectClass eq,pres
+olcDbIndex: ou,cn,mail,surname,givenname eq,pres,sub
+structuralObjectClass: olcHdbConfig
+entryUUID: 474ebc52-80f2-1038-80bc-dff4fa10414e
+creatorsName: cn=config
+createTimestamp: 20181120092743Z
+entryCSN: 20181120092743.758002Z#000000#000#000000
+modifiersName: cn=config
+modifyTimestamp: 20181120092743Z
+olcRootPW: {SSHA}nZAoKjp62CMcrEgX48nRKa2QMV4C+CKn
