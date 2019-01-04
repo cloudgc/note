@@ -78,8 +78,30 @@ openssl req -new -x509 -nodes -out /etc/openldap/certs/myldap.field.linuxhostsup
 
 
 
-
+#/etc/yum.conf
 #================install
 yum -y install openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel
 rpm -e --nodeps openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel
 yum remove -y  phpldapadmin
+
+
+#====================
+cat > /etc/yum.repos.d/ltb-project.repo <<EOF
+[ltb-project-noarch]
+name=LTB project packages (noarch)
+baseurl=https://ltb-project.org/rpm/$releasever/noarch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-LTB-project
+EOF
+yum update
+rpm --import https://ltb-project.org/wiki/lib/RPM-GPG-KEY-LTB-project
+
+
+wget http://ltb-project.org/archives/self-service-password-1.3-1.el7.noarch.rpm
+rpm --import https://ltb-project.org/wiki/lib/RPM-GPG-KEY-LTB-project
+yum localinstall self-service-password-1.3-1.el7.noarch.rpm
+
+yum install php-mcrypt
+
+yum install --downloadonly self-service-password

@@ -12,13 +12,24 @@ grep 'temporary password' /var/log/mysqld.log
 
 SET PASSWORD = PASSWORD('cloud_Gc3');
 
+GRANT ALL ON *.* TO 'slave'@'%' IDENTIFIED BY 'slave_Gc3';
 
 flush privileges
 
 
 
 
+#########################
+create user slave identified by 'password';
+GRANT REPLICATION SLAVE ON *.* TO 'slave'@'%' IDENTIFIED BY 'slave_Gc3';
+GRANT ALL  ON *.* TO 'slave'@'%' IDENTIFIED BY 'slave_Gc3';
 
+
+
+[mysqld]
+log-bin=mysql-bin #添加这一行就ok
+binlog-format=ROW #选择row模式
+server_id=1 #配置mysql replaction需要定义，不能和canal的slaveId重复
 
 
 
