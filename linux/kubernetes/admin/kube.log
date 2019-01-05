@@ -1,0 +1,66 @@
+Name:               129.204.77.125
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/hostname=129.204.77.125
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Sat, 05 Jan 2019 14:46:03 +0800
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type                 Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                 ------  -----------------                 ------------------                ------                       -------
+  NetworkUnavailable   False   Sat, 05 Jan 2019 14:46:27 +0800   Sat, 05 Jan 2019 14:46:27 +0800   WeaveIsUp                    Weave pod has set this
+  OutOfDisk            False   Sat, 05 Jan 2019 16:04:05 +0800   Sat, 05 Jan 2019 16:00:41 +0800   KubeletHasSufficientDisk     kubelet has sufficient disk space available
+  MemoryPressure       False   Sat, 05 Jan 2019 16:04:05 +0800   Sat, 05 Jan 2019 16:00:41 +0800   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure         False   Sat, 05 Jan 2019 16:04:05 +0800   Sat, 05 Jan 2019 16:00:41 +0800   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure          False   Sat, 05 Jan 2019 16:04:05 +0800   Sat, 05 Jan 2019 14:46:03 +0800   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                True    Sat, 05 Jan 2019 16:04:05 +0800   Sat, 05 Jan 2019 16:00:41 +0800   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  129.204.77.125
+  Hostname:    129.204.77.125
+Capacity:
+ cpu:                4
+ ephemeral-storage:  103079844Ki
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             16266972Ki
+ pods:               110
+Allocatable:
+ cpu:                4
+ ephemeral-storage:  94998384074
+ hugepages-1Gi:      0
+ hugepages-2Mi:      0
+ memory:             16164572Ki
+ pods:               110
+System Info:
+ Machine ID:                 c28d40cbc8e3adcb4e32d9779a77b39e
+ System UUID:                48845A3A-D97C-4D98-A90D-EAAD5865E74D
+ Boot ID:                    0d385644-039f-47e3-9c20-ab709799b9a2
+ Kernel Version:             3.10.0-862.el7.x86_64
+ OS Image:                   CentOS Linux 7 (Core)
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://18.6.1
+ Kubelet Version:            v1.12.2
+ Kube-Proxy Version:         v1.12.2
+Non-terminated Pods:         (2 in total)
+  Namespace                  Name                CPU Requests  CPU Limits  Memory Requests  Memory Limits
+  ---------                  ----                ------------  ----------  ---------------  -------------
+  kube-system                kube-proxy-6jhf6    0 (0%)        0 (0%)      0 (0%)           0 (0%)
+  kube-system                weave-net-dkx9n     20m (0%)      0 (0%)      0 (0%)           0 (0%)
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource  Requests  Limits
+  --------  --------  ------
+  cpu       20m (0%)  0 (0%)
+  memory    0 (0%)    0 (0%)
+Events:
+  Type    Reason                   Age                   From                     Message
+  ----    ------                   ----                  ----                     -------
+  Normal  NodeReady                36m (x7 over 77m)     kubelet, 129.204.77.125  Node 129.204.77.125 status is now: NodeReady
+  Normal  NodeHasNoDiskPressure    32m (x8 over 78m)     kubelet, 129.204.77.125  Node 129.204.77.125 status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientMemory  11m (x12 over 78m)    kubelet, 129.204.77.125  Node 129.204.77.125 status is now: NodeHasSufficientMemory
+  Normal  NodeHasSufficientDisk    3m30s (x13 over 78m)  kubelet, 129.204.77.125  Node 129.204.77.125 status is now: NodeHasSufficientDisk

@@ -1,0 +1,46 @@
+apiEndpoint:
+  advertiseAddress: 47.99.111.155
+  bindPort: 8443
+apiVersion: kubeadm.k8s.io/v1alpha3
+bootstrapTokens:
+- groups:
+  - system:bootstrappers:kubeadm:default-node-token
+  token: 9bq7de.any36nzob1kmqnpl
+  ttl: 24h0m0s
+  usages:
+  - signing
+  - authentication
+kind: InitConfiguration
+nodeRegistration:
+  criSocket: /var/run/dockershim.sock
+  name: cloudfun.org
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+---
+apiServerExtraArgs:
+  runtime-config: api/all=true
+apiVersion: kubeadm.k8s.io/v1alpha3
+auditPolicy:
+  logDir: /var/log/kubernetes/audit
+  logMaxAge: 2
+  path: ""
+certificatesDir: /etc/kubernetes/pki
+clusterName: kubernetes
+controlPlaneEndpoint: ""
+controllerManagerExtraArgs:
+  horizontal-pod-autoscaler-sync-period: 10s
+  horizontal-pod-autoscaler-use-rest-clients: "true"
+  node-monitor-grace-period: 10s
+etcd:
+  local:
+    dataDir: /var/lib/etcd
+    image: ""
+imageRepository: k8s.gcr.io
+kind: ClusterConfiguration
+kubernetesVersion: v1.12.2
+networking:
+  dnsDomain: cluster.local
+  podSubnet: ""
+  serviceSubnet: 10.96.0.0/12
+unifiedControlPlaneImage: ""

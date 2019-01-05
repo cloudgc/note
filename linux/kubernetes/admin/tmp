@@ -1,0 +1,7 @@
+docker push cloudfun/kube-proxy:v1.12.2
+docker push cloudfun/kube-apiserver:v1.12.2
+docker push cloudfun/kube-controller-manager:v1.12.2
+docker push cloudfun/kube-scheduler:v1.12.2
+docker push cloudfun/etcd:3.2.24
+docker push cloudfun/coredns:1.2.2
+docker push cloudfun/pause:3.1
