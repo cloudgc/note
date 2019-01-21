@@ -10,9 +10,7 @@ systemctl daemon-reload
 
 grep 'temporary password' /var/log/mysqld.log
 
-SET PASSWORD = PASSWORD('cloud_Gc3');
 
-GRANT ALL ON *.* TO 'slave'@'%' IDENTIFIED BY 'slave_Gc3';
 
 flush privileges
 
@@ -68,3 +66,16 @@ vi /etc/my.cnf
 # 系统字符集
 locale
 /etc/locale.conf
+
+
+
+
+==========================start
+
+./bin/mysqld --defaults-file=/home/canal/slave/conf/my.cnf --initialize --user=canal --basedir=/home/canal/slave  --datadir=/home/canal/slave/data
+
+./bin/mysql_ssl_rsa_setup --datadir=/home/canal/slave/data
+
+./bin/mysqld_safe  --defaults-file=/home/canal/slave/conf/my.cnf &
+
+./bin/mysql --socket=/home/canal/slave/var/mysql-db.sock  -uroot -p
