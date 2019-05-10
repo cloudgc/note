@@ -9,3 +9,26 @@ echo {\"server\": \"0.0.0.0\", \"port_password\": {\"443\": \"ysysljj\",\
  \"workers\":2 \
 } > /etc/shadowsocks/config
 ssserver -c /etc/shadowsocks/config -d start 
+
+##### linux client
+sslocal -c /etc/shadowsocks.json
+{
+"server":"",
+"server_port":,
+"local_port":,
+"password":"",
+"timeout":600,
+"method":"aes-256-cfb"
+}
+
+# Privoxy
+ yum install privoxy  
+# 修改文件/etc/privoxy/config ，修改如下属性值：
+listen-address  :8118 
+enable-remote-toggle  1  
+
+#文件末尾添加：
+forward-socks5 / 127.0.0.1:443  
+
+#启动Privoxy即可开启http代理。
+service privoxy restart   
