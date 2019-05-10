@@ -9,6 +9,8 @@
 
 images_k8s=(kube-proxy:v1.12.2 kube-apiserver:v1.12.2 kube-controller-manager:v1.12.2 kube-scheduler:v1.12.2 etcd:3.2.24 coredns:1.2.2 pause:3.1 )
 
+images_k8s=(kube-proxy:v1.14.1 kube-apiserver:v1.14.1 kube-controller-manager:v1.14.1 kube-scheduler:v1.14.1 etcd:3.3.10 coredns:1.3.1 pause:3.1 )
+
 for imageName in ${images_k8s[@]} ; do
     docker pull cloudfun/$imageName
     docker tag cloudfun/$imageName k8s.gcr.io/$imageName
