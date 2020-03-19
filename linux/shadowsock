@@ -4,7 +4,7 @@ curl https://bootstrap.pypa.io/get-pip.py | python
 pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
 mkdir /etc/shadowsocks
 echo {\"server\": \"0.0.0.0\", \"port_password\": {\"36666\": \"ysysljj1314bb\",\
-\"3888\": \"ysysljj1314bb\",\
+\"38888\": \"ysysljj1314bb\",\
 \"39999\": \"ysysljj1314bb\" }, \
 \"timeout\": 300, \"method\": \"aes-256-gcm\",\
  \"workers\":2 \
