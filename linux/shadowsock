@@ -1,11 +1,12 @@
 #! /bin/sh
 curl https://bootstrap.pypa.io/get-pip.py | python
-pip install shadowsocks
+#pip install shadowsocks
+pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
 mkdir /etc/shadowsocks
-echo {\"server\": \"0.0.0.0\", \"port_password\": {\"443\": \"ysysljj\",\
-\"446\": \"ysysljj\",\
-\"447\": \"ysysljj\" }, \
-\"timeout\": 300, \"method\": \"aes-256-cfb\",\
+echo {\"server\": \"0.0.0.0\", \"port_password\": {\"3666\": \"ysysljj1314bb\",\
+\"3888\": \"ysysljj1314bb\",\
+\"3999\": \"ysysljj1314bb\" }, \
+\"timeout\": 300, \"method\": \"aes-256-gcm\",\
  \"workers\":2 \
 } > /etc/shadowsocks/config
 ssserver -c /etc/shadowsocks/config -d start 
